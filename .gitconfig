@@ -1,0 +1,25 @@
+[user]
+	name = gulyasm
+	email = mgulyas86@gmail.com
+[gui]
+	encoding = utf-8
+	fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+[i18n]
+	commitEncoding = 'utf8'
+	logOutputEncoding = 'utf8
+[alias]
+	tr = log --all --oneline --graph --decorate
+	standup = log --since yesterday --author gulyasm --pretty=short
+	st = status -sb
+	lg = log --pretty=format:'%Cred%h %Creset %C(bold blue)%an%Creset  %Creset %s %Cgreen - %cr'
+	wipe = reset --hard HEAD
+    devmerge = !git checkout master && git merge develop && git checkout develop
+
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	editor = vim
+[color "decorate"]
+[push]
+	default = simple
