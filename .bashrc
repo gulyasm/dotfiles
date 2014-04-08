@@ -15,8 +15,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2000
-HISTFILESIZE=4000
+HISTSIZE=5000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -96,6 +96,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T'
 alias mlwebs='ssh mlweb'
 alias mldms='ssh mldm'
+alias fsize='du -hd1 | sort -hr'
+alias sf='subl -f .'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -117,3 +119,5 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
