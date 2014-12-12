@@ -73,8 +73,11 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 :set autowrite
 au FileType python nmap <Leader>r :!clear;python %<CR>
 nmap <F5> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist)$'
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
