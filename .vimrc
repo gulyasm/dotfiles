@@ -1,7 +1,5 @@
-:set t_ut=
 syntax enable
-set background=dark
-" colorscheme solarized
+set t_Co=256
 set number 
 
 " Sets how many lines of history VIM has to remember
@@ -57,4 +55,31 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+colorscheme molokai-transparent
+
+execute pathogen#infect()
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+:set autowrite
+au FileType python nmap <Leader>r :!clear;python %<CR>
+nmap <F5> :NERDTreeToggle<CR>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist)$'
+
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
+nnoremap <Right> :bn<CR>
+nnoremap <Left> :bp<CR>
+nnoremap <Up> :BufExplorer<CR>
 
