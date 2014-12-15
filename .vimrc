@@ -50,6 +50,8 @@ set tabstop=4
 set ai "Auto indent
 set si "Smart indent
 
+set hlsearch
+set incsearch
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
