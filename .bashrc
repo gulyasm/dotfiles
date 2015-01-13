@@ -98,6 +98,9 @@ alias mlwebs='ssh mlweb'
 alias mldms='ssh mldm'
 alias fsize='du -hd1 | sort -hr'
 alias sf='subl -f .'
+alias j='jump'
+alias mkae='make'
+alias mkea='make'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -121,3 +124,25 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+export MARKPATH=$HOME/.marks
+function jump {
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark {
+    rm -i "$MARKPATH/$1"
+}
+function marks {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+_completemarks() {
+    local curw=${COMP_WORDS[COMP_CWORD]}
+    local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+    COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+    return 0
+}
+
+complete -F _completemarks jump unmark

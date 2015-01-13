@@ -14,7 +14,8 @@
 	lg = log --pretty=format:'%Cred%h %Creset %C(bold blue)%an%Creset  %Creset %s %Cgreen - %cr'
 	wipe = reset --hard HEAD
     devmerge = !git checkout master && git merge develop && git checkout develop
-	d = difftool
+    d = difftool
+    c = commit -v --branch
 
 [color]
 	ui = true

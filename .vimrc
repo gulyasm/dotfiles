@@ -88,3 +88,5 @@ nnoremap <Right> :bn<CR>
 nnoremap <Left> :bp<CR>
 nnoremap <Up> :BufExplorer<CR>
 
+autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
