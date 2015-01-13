@@ -6,6 +6,7 @@ install:
 	cp .tmux.conf ~/
 	cp .gitconfig ~/
 	cp .profile ~/
+	cp .NERDTreeBookmarks ~/
 
 get:
 	cp ~/.bashrc .
@@ -13,3 +14,4 @@ get:
 	cp ~/.tmux.conf .
 	cp ~/.gitconfig .
 	cp ~/.profile .
+	cp ~/.NERDTreeBookmarks .
