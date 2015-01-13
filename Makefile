@@ -1,3 +1,5 @@
+default: install
+
 install:
 	cp .bashrc ~/
 	cp .vimrc ~/
