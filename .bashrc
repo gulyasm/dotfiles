@@ -146,3 +146,8 @@ _completemarks() {
 }
 
 complete -F _completemarks jump unmark
+
+function saveit {
+    mkdir -p ~/archive
+    tar -cavf ~/archive/$(basename $1)_$(date +"%Y%m%d_%H%M").tar.gz $1
+}
