@@ -1,4 +1,3 @@
-eval `dircolors /home/gulyasm/.dir_colors`
 VIM=/usr/local/bin/vim
 VIMRUNTIME=/usr/local/bin/vim
 EDITOR=$VIM/vim

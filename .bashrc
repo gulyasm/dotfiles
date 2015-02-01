@@ -101,7 +101,7 @@ alias sf='subl -f .'
 alias j='jump'
 alias mkae='make'
 alias mkea='make'
-
+alias tn='tmux new bash'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
