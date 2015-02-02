@@ -1,0 +1,35 @@
+Fixed tmux PS1 bug and dir_colors bug.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .bashrc
+#	modified:   .profile
+#
+# ------------------------ >8 ------------------------
+# Do not touch the line above.
+# Everything below will be removed.
+diff --git a/.bashrc b/.bashrc
+index 677e573..6717595 100644
+--- a/.bashrc
++++ b/.bashrc
+@@ -101,7 +101,7 @@ alias sf='subl -f .'
+ alias j='jump'
+ alias mkae='make'
+ alias mkea='make'
+-
++alias tn='tmux new bash'
+ 
+ # Add an "alert" alias for long running commands.  Use like so:
+ #   sleep 10; alert
+diff --git a/.profile b/.profile
+index 2f4d924..3c1240f 100644
+--- a/.profile
++++ b/.profile
+@@ -1,4 +1,3 @@
+-eval `dircolors /home/gulyasm/.dir_colors`
+ VIM=/usr/local/bin/vim
+ VIMRUNTIME=/usr/local/bin/vim
+ EDITOR=$VIM/vim
