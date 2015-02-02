@@ -2,6 +2,7 @@ default: install
 
 install:
 	cp .bashrc ~/
+	cp .bash_profile ~/
 	cp .vimrc ~/
 	cp .tmux.conf ~/
 	cp .gitconfig ~/
@@ -10,6 +11,7 @@ install:
 
 get:
 	cp ~/.bashrc .
+	cp ~/.bash_profile .
 	cp ~/.vimrc .
 	cp ~/.tmux.conf .
 	cp ~/.gitconfig .
