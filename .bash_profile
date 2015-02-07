@@ -1,2 +1,1 @@
-PS1="\W $ "
-
+source ~/.bashrc

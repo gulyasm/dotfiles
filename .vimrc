@@ -94,3 +94,4 @@ autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 set laststatus=2
 
 nnoremap ; :
+nnoremap s "
