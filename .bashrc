@@ -151,3 +151,7 @@ function saveit {
     mkdir -p ~/archive
     tar -cavf ~/archive/$(basename $1)_$(date +"%Y%m%d_%H%M").tar.gz $1
 }
+
+function scratch {
+    vim ~/Dropbox/insightful/$1
+}
