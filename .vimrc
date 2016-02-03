@@ -1,5 +1,4 @@
-syntax enable
-set t_Co=256
+set relativenumber
 set number
 
 " Sets how many lines of history VIM has to remember
@@ -50,15 +49,12 @@ set tabstop=4
 set ai "Auto indent
 set si "Smart indent
 
-set hlsearch
 set incsearch
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-colorscheme molokai-transparent
 
 execute pathogen#infect()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -79,7 +75,6 @@ nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist)$'
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
@@ -90,8 +85,25 @@ nnoremap <Up> :BufExplorer<CR>
 nnoremap <F2> :NERDTreeFromBookmark
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 set laststatus=2
 
-nnoremap ; :
-nnoremap s "
+nnoremap ' :
+inoremap jj <Esc>
+
+nnoremap gr :grep <cword> *<CR>
+
+autocmd BufWritePre *.go GoImports
+
+let g:user_emmet_expandabbr_key = '<c-e>'
+
+
+autocmd FileType jsx noremap <buffer> <c-l> :call JsxBeautify()<cr>
+autocmd FileType javascript noremap <buffer> <c-l> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-l> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-l> :call CSSBeautify()<cr>
+
+nmap <F3> :browse oldfiles <CR> <CR>
+nmap <silent><A-j> o <Esc> k
+nmap <silent><A-k> O <Esc> j
+
+:nnoremap <F4> :buffers<CR>:buffer<Space>

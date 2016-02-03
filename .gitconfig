@@ -8,10 +8,10 @@
 	commitEncoding = 'utf8'
 	logOutputEncoding = 'utf8
 [alias]
-	tr = log --all --oneline --graph --decorate
+	tr = log --all --oneline --graph --decorate -22
 	standup = log --since yesterday --author gulyasm --pretty=short
 	st = status -sb
-	lg = log --pretty=format:'%Cred%h %Creset %C(bold blue)%an%Creset  %Creset %s %Cgreen - %cr'
+	lg = log --pretty=format:'%h    %an     %s - %cr'
 	wipe = reset --hard HEAD
     devmerge = !git checkout master && git merge develop && git checkout develop
     d = difftool

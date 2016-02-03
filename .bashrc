@@ -1,4 +1,4 @@
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color tmux"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -84,24 +84,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -laGh'
 
-# custom aliasis
-alias .='cd .'
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-alias mkdir='mkdir -pv'
-alias h='history'
-alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%T'
-alias mlwebs='ssh mlweb'
-alias mldms='ssh mldm'
-alias fsize='du -hd1 | sort -hr'
-alias sf='subl -f .'
-alias j='jump'
-alias mkae='make'
-alias mkea='make'
-alias tn='tmux new bash'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -113,7 +95,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -147,11 +129,26 @@ _completemarks() {
 
 complete -F _completemarks jump unmark
 
-function saveit {
-    mkdir -p ~/archive
-    tar -cavf ~/archive/$(basename $1)_$(date +"%Y%m%d_%H%M").tar.gz $1
+
+function usage_run() {
+    echo "Usage: run TIMES COMMAND"
 }
 
-function scratch {
-    vim ~/Dropbox/insightful/$1
+function run() {
+    if [ -z ${1} ];
+    then
+        usage_run && return;
+    fi
+    t=${1}
+    shift
+    if [[ -z ${@} ]];
+    then
+        usage_run && return;
+    fi
+    for i in `seq ${t}`;
+    do
+        ${@:?usage_run};
+    done
 }
+
+source ~/.autoenv/activate.sh
