@@ -30,6 +30,7 @@ alias gl='git lg -20'
 alias ga='git add .'
 alias gcm='git commit'
 alias gdf='git diff'
+alias gic='git commit'
 
 alias v='vagrant'
 alias t='terraform'
@@ -38,9 +39,9 @@ alias jwa='jira worklogadd'
 alias jstart='jira start'
 alias jstop='jira start'
 
-alias gno='gnome-open'
+alias cdtemp='cd `mktemp -d`'
 
-alias gic='git commit'
+alias gno='gnome-open'
 
 function saveit {
     mkdir -p ~/archive
@@ -87,5 +88,3 @@ cdp () {
 pcp () {
     python -c "print $@"
 }
-
-
