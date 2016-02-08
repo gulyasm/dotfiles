@@ -88,3 +88,12 @@ cdp () {
 pcp () {
     python -c "print $@"
 }
+
+github() {
+    repo=${1}
+    if [[ -z "${repo}" ]];
+    then
+        repo=$(basename `pwd`);
+    fi
+    google-chrome "https://github.com/enbritely/${repo}"
+}
