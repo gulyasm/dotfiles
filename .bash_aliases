@@ -97,3 +97,11 @@ github() {
     fi
     google-chrome "https://github.com/enbritely/${repo}"
 }
+
+f() {
+    find . -type f -iname ${@} -not -iname *.pyc
+}
+
+fa() {
+    find . -type f -iname *${@}* -not -iname *.pyc
+}
