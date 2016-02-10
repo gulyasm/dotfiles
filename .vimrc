@@ -106,4 +106,6 @@ nmap <F3> :browse oldfiles <CR> <CR>
 nmap <silent><A-j> o <Esc> k
 nmap <silent><A-k> O <Esc> j
 
+let mapleader="\<Tab>"
 :nnoremap <F4> :buffers<CR>:buffer<Space>
+:nnoremap <Leader>h :%s/<C-r><C-w>//g<Left><Left>
