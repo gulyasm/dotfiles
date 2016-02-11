@@ -99,9 +99,9 @@ github() {
 }
 
 f() {
-    find . -type f -iname ${@} -not -iname *.pyc
+    find . -type f -iname "${@}" -not -iname *.pyc
 }
 
 fa() {
-    find . -type f -iname *${@}* -not -iname *.pyc
+    find . -type f -iname "*${@}*" -not -iname *.pyc
 }
