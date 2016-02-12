@@ -151,4 +151,4 @@ function run() {
     done
 }
 
-source ~/.autoenv/activate.sh
+[[ -e ~/.autoenv/activate.sh ]] && source ~/.autoenv/activate.sh

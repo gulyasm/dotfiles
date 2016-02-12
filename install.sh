@@ -3,6 +3,6 @@
 mkdir -p ~/oldfiles
 for f in `find . -maxdepth 1 -type f -name '.*'`;
 do
-    mv ~/${f} ~/oldfiles
+    [[ -e ${f} ]] && mv ~/${f} ~/oldfiles;
     ln `pwd`/${f} ~/${f}
 done
