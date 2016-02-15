@@ -42,6 +42,7 @@ alias jstop='jira start'
 alias cdtemp='cd `mktemp -d`'
 
 alias gno='gnome-open'
+alias weeknum='date +"%-V"'
 
 function saveit {
     mkdir -p ~/archive
