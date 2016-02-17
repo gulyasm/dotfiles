@@ -112,6 +112,9 @@ let vim_markdown_preview_github=1
 
 :nnoremap <Leader>c :%s/\s\+$//
 
-set statusline+=ft=%y      "filetype
-set statusline+=%4l/%L
-set statusline+=%4P
+set statusline=[%n]\ \ 
+set statusline+=ft=%y\ \ \|\ \ 
+set statusline+=%l/%L\ \ \|\ \ 
+set statusline+=%P\ \ \|\ \ 
+set statusline+=%f
+set statusline+=%=\ %{strftime(\"%H:%M\")}
