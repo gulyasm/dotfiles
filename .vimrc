@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 set relativenumber
 set number
 
@@ -26,9 +29,6 @@ set hid
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -112,9 +112,9 @@ let vim_markdown_preview_github=1
 
 :nnoremap <Leader>c :%s/\s\+$//
 
-set statusline=[%n]\ \ 
-set statusline+=ft=%y\ \ \|\ \ 
-set statusline+=%l/%L\ \ \|\ \ 
-set statusline+=%P\ \ \|\ \ 
-set statusline+=%f
-set statusline+=%=\ %{strftime(\"%H:%M\")}
+set statusline=[%n]
+set statusline+=\ %y\ \ 
+set statusline+=▌\ %l/%L\ 
+set statusline+=❱\ %P\ \ 
+set statusline+=▌\ %f
+set statusline+=%=\ 🕒\ %{strftime(\"%H:%M\")}
