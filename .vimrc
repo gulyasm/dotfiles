@@ -116,5 +116,5 @@ set statusline=[%n]
 set statusline+=\ %y\ \ 
 set statusline+=▌\ %l/%L\ 
 set statusline+=❱\ %P\ \ 
-set statusline+=▌\ %f
+set statusline+=\▌\ %f\ %m
 set statusline+=%=\ 🕒\ %{strftime(\"%H:%M\")}
