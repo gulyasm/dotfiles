@@ -76,9 +76,9 @@ function shortdate() {
     date -d $1 +%Y-%m-%d
 }
 
-gocd () { cd $(go list -f '{{.Dir}}' .../$1 |head -1); }
+gocd() { cd $(go list -f '{{.Dir}}' .../$1 |head -1); }
 
-cdp () {
+cdp() {
       TEMP_PWD=`pwd`
       while ! [ -d .git ]; do
       cd ..
@@ -86,7 +86,7 @@ cdp () {
       OLDPWD=$TEMP_PWD
 }
 
-pcp () {
+pcp() {
     python -c "print $@"
 }
 
@@ -111,4 +111,8 @@ wd() {
     td=~/workspace/${1-`uuidgen`}
     mkdir -p $td
     cd $td
+}
+
+tul() {
+    sudo netstat -tulnp
 }
