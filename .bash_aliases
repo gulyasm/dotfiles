@@ -106,3 +106,9 @@ f() {
 fa() {
     find . -type f -iname "*${@}*" -not -iname *.pyc
 }
+
+wd() {
+    td=~/workspace/${1-`uuidgen`}
+    mkdir -p $td
+    cd $td
+}
