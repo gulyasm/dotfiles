@@ -51,21 +51,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='\W $ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\w\% '
-fi
+PS1="\W \$git_branch$ "
 unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -152,3 +139,25 @@ function run() {
 }
 
 [[ -e ~/.autoenv/activate.sh ]] && source ~/.autoenv/activate.sh
+
+find_git_branch() {
+  # Based on: http://stackoverflow.com/a/13003854/170413
+  local status=$(git status --porcelain 2> /dev/null)
+  if [[ "$status" != "" ]]; then
+      git_dirty='+'
+  else
+      git_dirty=''
+  fi
+  local branch
+  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    if [[ "$branch" == "HEAD" ]]; then
+      branch='detached*'
+    fi
+    git_branch="($git_dirty$branch)"
+  else
+    git_branch=""
+  fi
+}
+
+
+PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"

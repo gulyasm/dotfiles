@@ -36,3 +36,4 @@ export PATH=$PATH:$CONSUL_HOME
 export PATH=$PATH:/home/gulyasm/bin
 export CDPATH=$GOPATH/src/github.com/$USER:$GOPATH/src/github.com/enbritely
 PATH="/usr/local/heroku/bin:$PATH"
+export GOROOT_BOOTSTRAP=/opt/go1.5.3

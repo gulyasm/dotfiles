@@ -116,3 +116,11 @@ wd() {
 tul() {
     sudo netstat -tulnp
 }
+
+vround () {
+    [ -d .vagrant ] && vagrant destroy -f && vagrant up && vagrant ssh 
+}
+
+function perf {
+      curl -o /dev/null  -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
+}
