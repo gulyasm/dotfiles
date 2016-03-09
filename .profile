@@ -1,6 +1,6 @@
 VIM=/usr/local/bin/vim
 VIMRUNTIME=/usr/local/bin/vim
-EDITOR=$VIM/vim
+export EDITOR=$VIM/vim
 
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
@@ -19,10 +19,10 @@ export ENBRITELY_API_TELEMETRY_ADDRESS=":8080"
 # Passwords and other not public stuff
 source ~/.secret
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:/bin:/home/gulyasm/.local/bin
-TERRAFORM_HOME=/opt/terraform
-CONSUL_HOME=/opt/consul
-VAULT_HOME=/opt/vault
-PACKER_HOME=/opt/packer
+export TERRAFORM_HOME=/opt/terraform
+export CONSUL_HOME=/opt/consul
+export VAULT_HOME=/opt/vault
+export PACKER_HOME=/opt/packer
 export MAVEN_HOME=/opt/apache-maven-3.3.3
 export PATH=$PATH:$MAVEN_HOME/bin
 export PATH=$PATH:$GOROOT/bin
@@ -35,5 +35,5 @@ export PATH=$PACKER_HOME:$PATH
 export PATH=$PATH:$CONSUL_HOME
 export PATH=$PATH:/home/gulyasm/bin
 export CDPATH=$GOPATH/src/github.com/$USER:$GOPATH/src/github.com/enbritely
-PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
 export GOROOT_BOOTSTRAP=/opt/go1.5.3
