@@ -61,6 +61,8 @@ map <C-l> <C-W>l
 execute pathogen#infect()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+let mapleader=' '
+
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -92,7 +94,7 @@ set laststatus=2
 nnoremap ' :
 inoremap jj <Esc>
 
-nnoremap gr :grep <cword> *<CR>
+nnoremap gr :grep -R <cword> *<CR>
 
 autocmd BufWritePre *.go GoImports
 
@@ -120,3 +122,8 @@ set statusline+=▌\ %l/%L\
 set statusline+=❱\ %P\ \ 
 set statusline+=\▌\ %f\ %m
 set statusline+=%=\ 🕒\ %{strftime(\"%H:%M\")}
+
+
+nnoremap <Leader>hi :set hlsearch<CR>:let @/='<C-r><C-w>'<CR>
+nnoremap <Leader>ho :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
+nnoremap <Leader>q ciw""<Esc>P
