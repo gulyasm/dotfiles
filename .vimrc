@@ -127,3 +127,5 @@ set statusline+=%=\ 🕒\ %{strftime(\"%H:%M\")}
 nnoremap <Leader>hi :set hlsearch<CR>:let @/='<C-r><C-w>'<CR>
 nnoremap <Leader>ho :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
 nnoremap <Leader>q ciw""<Esc>P
+nnoremap <Leader>+ /\$\w\+_<CR>
+nnoremap <Leader>_ f_x~
