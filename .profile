@@ -1,6 +1,6 @@
 VIM=/usr/local/bin/vim
 VIMRUNTIME=/usr/local/bin/vim
-export EDITOR=$VIM/vim
+export EDITOR=$VIM
 
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
