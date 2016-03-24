@@ -124,3 +124,7 @@ vround () {
 function curlperf {
       curl -o /dev/null  -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
 }
+
+function urldecode {
+    python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"
+}
