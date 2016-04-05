@@ -113,6 +113,13 @@ wd() {
     cd $td
 }
 
+_completewd() {
+    local curw=${COMP_WORDS[COMP_CWORD]}
+    local wordlist=$(find ~/workspace -maxdepth 1 -type d -printf "%f\n")
+    COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+    return 0
+}
+
 tul() {
     sudo netstat -tulnp
 }
