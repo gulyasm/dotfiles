@@ -29,7 +29,6 @@ alias gt='git tr'
 alias gl='git lg -20'
 alias ga='git add .'
 alias gcm='git commit'
-alias gdf='git diff'
 alias gic='git commit'
 
 alias v='vagrant'
@@ -134,4 +133,9 @@ function curlperf {
 
 function urldecode {
     python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"
+}
+
+function gdf {
+    printf "\033c"
+    git diff
 }

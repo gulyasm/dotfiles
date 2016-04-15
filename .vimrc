@@ -129,3 +129,7 @@ nnoremap <Leader>ho :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
 nnoremap <Leader>q ciw""<Esc>P
 nnoremap <Leader>+ /\$\w\+_<CR>
 nnoremap <Leader>_ f_x~
+nnoremap <Leader>, :%s#,#,\r#g
+
+let g:autopep8_max_line_length=120
+au FileType python setlocal formatprg=autopep8\ -
