@@ -1,8 +1,8 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-set relativenumber
 set number
+set relativenumber
 
 " Sets how many lines of history VIM has to remember
 set history=700

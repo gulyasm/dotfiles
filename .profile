@@ -1,3 +1,4 @@
+PS1="\W \$git_branch$ "
 VIM=/usr/local/bin/vim
 VIMRUNTIME=/usr/local/bin/vim
 export EDITOR=$VIM
@@ -11,7 +12,7 @@ export GOPATH=/home/gulyasm/gocode
 export ANSIBLE_NOCOWS=1
 export WWW_HOME=/var/www
 export JAVA_HOME=/opt/jdk1.8.0_60/
-export SPARK_HOME=/opt/spark-1.4.0-bin-hadoop2.6
+export SPARK_HOME=/opt/spark-1.6.1-bin-hadoop2.6
 
 export ENBRITELY_WSID="dummy-wsid"
 export ENBRITELY_API_TELEMETRY_ADDRESS=":8080"
