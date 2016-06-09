@@ -1,4 +1,5 @@
 # custom aliasis
+alias l='ls -lhat'
 alias .='cd .'
 alias ..='cd ..'
 alias ...='cd ../../../'
