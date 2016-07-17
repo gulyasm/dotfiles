@@ -141,3 +141,4 @@ nnoremap <Leader>, :%s#,#,\r#g
 let g:autopep8_max_line_length=120
 au FileType python setlocal formatprg=autopep8\ -
 
+autocmd BufWritePost *.py call Flake8()
