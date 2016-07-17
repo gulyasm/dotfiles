@@ -25,12 +25,13 @@ alias myl='mysql -uroot -proot'
 alias gtr='git tr'
 alias hg='history | grep'
 alias gs='git st'
+alias gc='git commit'
+alias gic='git checkout'
 alias gp='git pull'
 alias gt='git tr'
 alias gl='git lg -20'
 alias ga='git add .'
 alias gcm='git commit'
-alias gic='git commit'
 
 alias v='vagrant'
 alias t='terraform'
@@ -125,7 +126,7 @@ tul() {
 }
 
 vround () {
-    [ -d .vagrant ] && vagrant destroy -f && vagrant up && vagrant ssh 
+    [ -d .vagrant ] && vagrant destroy -f && vagrant up
 }
 
 function curlperf {

@@ -95,8 +95,13 @@ nnoremap ' :
 inoremap jj <Esc>
 
 nnoremap gr :grep -R <cword> *<CR>
+nnoremap gR :grep -R
+nmap <silent> <C-M> :cn<CR>zv
+nmap <silent> <C-N> :cp<CR>zv
 
 autocmd BufWritePre *.go GoImports
+autocmd BufWritePre *.tf TerraformFmt
+autocmd BufWritePre *.tf.tpl TerraformFmt
 
 let g:user_emmet_expandabbr_key = '<c-e>'
 
@@ -105,6 +110,8 @@ autocmd FileType jsx noremap <buffer> <c-l> :call JsxBeautify()<cr>
 autocmd FileType javascript noremap <buffer> <c-l> :call JsBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-l> :call HtmlBeautify()<cr>
 autocmd FileType css noremap <buffer> <c-l> :call CSSBeautify()<cr>
+au BufRead,BufNewFile *.json set filetype=json
+autocmd FileType json noremap <buffer> <c-l> :call JsonBeautify()<cr>
 
 nmap <F3> :browse oldfiles <CR> <CR>
 nmap <silent><A-j> o <Esc> k
@@ -121,7 +128,7 @@ set statusline+=\ %y\ \
 set statusline+=▌\ %l/%L\ 
 set statusline+=❱\ %P\ \ 
 set statusline+=\▌\ %f\ %m
-set statusline+=%=\ 🕒\ %{strftime(\"%H:%M\")}
+set statusline+=%=\ 🕒\ \ %{strftime(\"%H:%M\")}
 
 
 nnoremap <Leader>hi :set hlsearch<CR>:let @/='<C-r><C-w>'<CR>
@@ -133,3 +140,4 @@ nnoremap <Leader>, :%s#,#,\r#g
 
 let g:autopep8_max_line_length=120
 au FileType python setlocal formatprg=autopep8\ -
+
